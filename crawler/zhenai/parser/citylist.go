@@ -14,11 +14,12 @@ func ParseCityList(contents []byte) engine.ParseResult {
 	// 将解析出来的 Url 列表都存储为一个ParserResult
 	result := engine.ParseResult{}
 	for _, m := range matches {
-		result.Items = append(result.Items, string(m[2]))
+		// m[0] 匹配的字符串本身
+		result.Items = append(result.Items, "City " + string(m[2]))
 		result.Requests = append(result.Requests,
 			engine.Request{
 				Url: string(m[1]),
-				ParserFunc: engine.NilParser,
+				ParserFunc: ParseCity,
 			})
 		//fmt.Printf("City: %s, URL: %s \n",m[2], m[1])
 	}

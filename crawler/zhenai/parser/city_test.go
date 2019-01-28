@@ -1,4 +1,4 @@
-// 测试cityList.go
+// 测试city.go
 package parser
 
 import (
@@ -6,25 +6,24 @@ import (
 	"io/ioutil"
 )
 
-func TestParseCityList(t *testing.T)  {
-	//content, err := fetcher.Fetch("http://www.zhenai.com/zhenghun")
-	content, err := ioutil.ReadFile("citylist_test_data.html")
+func TestParseCity(t *testing.T)  {
+	content, err := ioutil.ReadFile("city_test_data.html")
 	if err != nil {
 		panic(err)
 	}
 
-	result := ParseCityList(content)
+	result := ParseCity(content)
 
-	const resultSize  = 470
 	expectedUrls := []string{
-		"http://www.zhenai.com/zhenghun/aba",
-		"http://www.zhenai.com/zhenghun/akesu",
-		"http://www.zhenai.com/zhenghun/alashanmeng",
+		"http://album.zhenai.com/u/1094206362",
+		"http://album.zhenai.com/u/1769528526",
+		"http://album.zhenai.com/u/1028744854",
 	}
-	expectedCities := []string{
-		"City 阿坝","City 阿克苏","City 阿拉善盟",
+	expectedUsers := []string{
+		"User 若晨听海","User 夜明珠","User 梦的回忆",
 	}
 
+	const resultSize  = 20
 	if len(result.Requests) != resultSize {
 		t.Errorf("result should have %d requests; but had %d",
 			resultSize, len(result.Requests))
@@ -41,7 +40,7 @@ func TestParseCityList(t *testing.T)  {
 			resultSize, len(result.Items))
 	}
 
-	for i, item := range expectedCities {
+	for i, item := range expectedUsers {
 		if result.Items[i].(string) != item {
 			t.Errorf("expected item #%d: %s; but was %s",i, item, result.Items[i].(string))
 		}

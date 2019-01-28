@@ -24,6 +24,7 @@ func Run(seeds ...Request) {
 		}
 
 		parseResult := r.ParserFunc(body)
+		// parseResult.Requests... 意思是把[]Requests 拆开逐个添加
 		requests = append(requests, parseResult.Requests...)
 
 		for _, item := range parseResult.Items {
