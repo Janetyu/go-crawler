@@ -5,7 +5,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"io"
 	"io/ioutil"
 	"net/http"
 	"golang.org/x/net/html/charset"
@@ -27,7 +26,8 @@ func Fetch(url string) ([]byte, error) {
 	}
 
 	// 转换获取页面的数据编码
-	e := determineEncoding(resp.Body)
+	bodyReader := bufio.NewReader(resp.Body)
+	e := determineEncoding(bodyReader)
 	// utf8Reader := transform.NewReader(resp.Body,
 	// simplifiedchinese.GBK.NewDecoder())
 
@@ -37,10 +37,10 @@ func Fetch(url string) ([]byte, error) {
 }
 
 // 判断页面编码，并返回encoding
-func determineEncoding(r io.Reader) encoding.Encoding {
+func determineEncoding(r *bufio.Reader) encoding.Encoding {
 	// 因为resp.Body只能读取一次，因此创建一个buffer把数据拷贝一遍
 	// 因为DetermineEncoding接收的content参数大小为1024
-	bytes, err := bufio.NewReader(r).Peek(1024)
+	bytes, err := r.Peek(1024)
 	if err != nil {
 		// 出错返回默认编码 utf8
 		log.Printf("Fetcher error: %v", err)
