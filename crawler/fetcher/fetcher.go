@@ -31,7 +31,7 @@ func Fetch(url string) ([]byte, error) {
 	// utf8Reader := transform.NewReader(resp.Body,
 	// simplifiedchinese.GBK.NewDecoder())
 
-	utf8Reader := transform.NewReader(resp.Body,
+	utf8Reader := transform.NewReader(bodyReader,
 		e.NewDecoder())
 	return ioutil.ReadAll(utf8Reader)
 }
