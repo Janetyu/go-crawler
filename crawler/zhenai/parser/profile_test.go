@@ -2,16 +2,20 @@ package parser
 
 import (
 	"testing"
-	"io/ioutil"
 	"go-crawler/crawler/model"
+	"go-crawler/crawler/fetcher"
 )
 
 func TestParseProfile(t *testing.T) {
-	content, err := ioutil.ReadFile("profile_test_data.html")
+	content,_ := fetcher.Fetch("http://album.zhenai.com/u/1106374945")
+	//e,_,_ := charset.DetermineEncoding(content,"")
+	//t.Logf("the body encoding is %v\n",e)
+	//t.Logf("html is : %s", content)
+	//content, _ := ioutil.ReadFile("profile_test_data.html")
 
-	if err != nil {
-		panic(err)
-	}
+	//if err != nil {
+	//	panic(err)
+	//}
 
 	result := ParseProfile(content)
 	if len(result.Items) != 1 {
