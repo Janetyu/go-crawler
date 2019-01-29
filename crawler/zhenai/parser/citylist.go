@@ -13,6 +13,7 @@ func ParseCityList(contents []byte) engine.ParseResult {
 
 	// 将解析出来的 Url 列表都存储为一个ParserResult
 	result := engine.ParseResult{}
+	limit := 10
 	for _, m := range matches {
 		// m[0] 匹配的字符串本身
 		result.Items = append(result.Items, "City " + string(m[2]))
@@ -21,6 +22,10 @@ func ParseCityList(contents []byte) engine.ParseResult {
 				Url: string(m[1]),
 				ParserFunc: ParseCity,
 			})
+		limit--
+		if limit == 0 {
+			break
+		}
 		//fmt.Printf("City: %s, URL: %s \n",m[2], m[1])
 	}
 	//fmt.Printf("matches found : %d\n", len(matches))
