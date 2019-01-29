@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcc4ea29-abad-458b-b8bc-aed86ee7a04e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/engine/engine.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/engine.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/fetcher/fetcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/fetcher/fetcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/zhenai/parser/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/zhenai/parser/profile.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/zhenai/parser/profile_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/zhenai/parser/profile_test.go" afterDir="false" />
-    </list>
+    <list default="true" id="dcc4ea29-abad-458b-b8bc-aed86ee7a04e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +184,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="335" />
     <option name="width" value="1386" />
@@ -414,7 +408,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24809742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -475,18 +468,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/crawler/zhenai/parser/profile.go</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../github.com/PuerkitoBio/goquery/type.go">
