@@ -32,6 +32,6 @@ func Run(seeds ...Request) {
 			log.Printf("Got item %v", item)
 		}
 
-		time.Sleep(2 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 }
