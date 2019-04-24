@@ -12,9 +12,14 @@ import (
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
+	"time"
 )
 
+// 用于限制爬取速度, 相当于 1 秒处理 100 个 request
+var rateLimiter = time.Tick(10 * time.Millisecond)
+
 func Fetch(url string) ([]byte, error) {
+	<- rateLimiter
 	var utf8Reader *transform.Reader
 	if strings.Contains(url,"http://album.zhenai.com/u/") {
 		client := &http.Client{}
