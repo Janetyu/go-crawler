@@ -44,6 +44,7 @@ func createWorker(in chan Request, out chan ParseResult) {
 	go func() {
 		for {
 			// 这里是 worker 消费 scheduler
+			// tell scheduler i'm ready
 			request := <- in
 			result, err := worker(request)
 			if err != nil {
