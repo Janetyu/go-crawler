@@ -7,16 +7,17 @@ type QueuedScheduler struct {
 	workerChan chan chan engine.Request // 每一个 worker 对外接口的是 chan Request，每一个 worker 都是 chan
 }
 
-func (s *QueuedScheduler) Submit(r engine.Request) {
-	s.requestChan <- r
+func (s *QueuedScheduler) WorkerChan() chan engine.Request {
+	return make(chan engine.Request)
 }
 
 func (s *QueuedScheduler) WorkerReady(w chan engine.Request) {
 	s.workerChan <- w
 }
 
-func (s *QueuedScheduler) ConfigureMasterWorkerChan(chan engine.Request) {
-	panic("implement me")
+
+func (s *QueuedScheduler) Submit(r engine.Request) {
+	s.requestChan <- r
 }
 
 func (s *QueuedScheduler) Run() {
