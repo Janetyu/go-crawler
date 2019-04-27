@@ -1,34 +1,36 @@
 package scheduler
 
-import "go-crawler/crawler/engine"
+import (
+	"go-crawler/crawler/types"
+)
 
 type QueuedScheduler struct {
-	requestChan chan engine.Request
-	workerChan chan chan engine.Request // 每一个 worker 对外接口的是 chan Request，每一个 worker 都是 chan
+	requestChan chan types.Request
+	workerChan chan chan types.Request // 每一个 worker 对外接口的是 chan Request，每一个 worker 都是 chan
 }
 
-func (s *QueuedScheduler) WorkerChan() chan engine.Request {
-	return make(chan engine.Request)
+func (s *QueuedScheduler) WorkerChan() chan types.Request {
+	return make(chan types.Request)
 }
 
-func (s *QueuedScheduler) WorkerReady(w chan engine.Request) {
+func (s *QueuedScheduler) WorkerReady(w chan types.Request) {
 	s.workerChan <- w
 }
 
 
-func (s *QueuedScheduler) Submit(r engine.Request) {
+func (s *QueuedScheduler) Submit(r types.Request) {
 	s.requestChan <- r
 }
 
 func (s *QueuedScheduler) Run() {
-	s.requestChan = make(chan engine.Request)
-	s.workerChan = make(chan chan engine.Request)
+	s.requestChan = make(chan types.Request)
+	s.workerChan = make(chan chan types.Request)
 	go func() {
-		var requestQ []engine.Request
-		var workerQ []chan engine.Request
+		var requestQ []types.Request
+		var workerQ []chan types.Request
 		for {
-			var activeRequest engine.Request
-			var activeWorker chan engine.Request
+			var activeRequest types.Request
+			var activeWorker chan types.Request
 			if len(requestQ) > 0 && len(workerQ) >0 {
 				activeRequest = requestQ[0]
 				activeWorker = workerQ[0]

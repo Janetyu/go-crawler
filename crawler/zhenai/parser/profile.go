@@ -1,10 +1,10 @@
 package parser
 
 import (
-	"go-crawler/crawler/engine"
 	"regexp"
-	"go-crawler/crawler/model"
+	"go-crawler/crawler/zhenai/model"
 	"strconv"
+	"go-crawler/crawler/types"
 )
 
 var (
@@ -18,7 +18,7 @@ basicInfoRe = regexp.MustCompile(`"basicInfo":([^\]]+])`)
 detailInfoRe = regexp.MustCompile(`"detailInfo":([^\]]+])`)
 )
 
-func ParseProfile(contents []byte) engine.ParseResult {
+func ParseProfile(contents []byte) types.ParseResult {
 	//resp, err := http.Get(getServerDataUrl + objectId)
 	//defer resp.Body.Close()
 	profile := model.Profile{}
@@ -50,7 +50,7 @@ func ParseProfile(contents []byte) engine.ParseResult {
 	detailInfo := extractString(contents,detailInfoRe)
 	profile.DetailInfo = detailInfo
 
-	result := engine.ParseResult{
+	result := types.ParseResult{
 		Items: []interface{}{profile},
 	}
 

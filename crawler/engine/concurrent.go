@@ -1,26 +1,19 @@
 package engine
 
-import "log"
+import (
+	"log"
+	"go-crawler/crawler/scheduler"
+	"go-crawler/crawler/types"
+)
 
 type ConcurrentEngine struct {
-	Scheduler Scheduler
+	Scheduler scheduler.Scheduler
 	WorkerCount int
 }
 
-type Scheduler interface {
-	ReadyNotifier
-	Submit(Request)
-	WorkerChan() chan Request
-	Run()
-}
-
-type ReadyNotifier interface {
-	WorkerReady(chan Request)
-}
-
-func (e *ConcurrentEngine)Run(seeds ...Request) {
+func (e *ConcurrentEngine)Run(seeds ...types.Request) {
 	//in := make(chan Request)
-	out := make(chan ParseResult)
+	out := make(chan types.ParseResult)
 	e.Scheduler.Run()
 
 	for i := 0; i < e.WorkerCount; i ++ {
@@ -28,6 +21,10 @@ func (e *ConcurrentEngine)Run(seeds ...Request) {
 	}
 
 	for _, r := range seeds {
+		// 避免重复爬取 url
+		if isDuplicate(r.Url) {
+			continue
+		}
 		e.Scheduler.Submit(r)
 	}
 
@@ -46,7 +43,18 @@ func (e *ConcurrentEngine)Run(seeds ...Request) {
 	}
 }
 
-func createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
+var visitedUrl = make(map[string]bool)
+
+// URL deduplicate
+func isDuplicate(url string) bool {
+	if visitedUrl[url] {
+		return true
+	}
+	visitedUrl[url] = true
+	return false
+}
+
+func createWorker(in chan types.Request, out chan types.ParseResult, ready scheduler.ReadyNotifier) {
 	go func() {
 		for {
 			// 这里是 worker 消费 scheduler

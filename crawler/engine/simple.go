@@ -2,14 +2,15 @@ package engine
 
 import (
 	"log"
-	"go-crawler/crawler/fetcher"
 	"time"
+	"go-crawler/crawler/fetcher"
+	"go-crawler/crawler/types"
 )
 
 type SimpleEngine struct{}
 
-func (e SimpleEngine)Run(seeds ...Request) {
-	var requests []Request
+func (e SimpleEngine)Run(seeds ...types.Request) {
+	var requests []types.Request
 	for _, r := range seeds {
 		requests = append(requests, r)
 	}
@@ -35,12 +36,12 @@ func (e SimpleEngine)Run(seeds ...Request) {
 	}
 }
 
-func worker(r Request) (ParseResult, error) {
+func worker(r types.Request) (types.ParseResult, error) {
 	log.Printf("Fetching %s", r.Url)
 	body, err := fetcher.Fetch(r.Url)
 	if err != nil {
 		log.Printf("Fetcher: error fetching url %s: %v", r.Url, err)
-		return ParseResult{}, err
+		return types.ParseResult{}, err
 	}
 
 	return r.ParserFunc(body), nil
