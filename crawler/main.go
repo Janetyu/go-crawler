@@ -2,8 +2,8 @@ package main
 
 import (
 	"go-crawler/crawler/engine"
-	"go-crawler/crawler/zhenai/parser"
 	"go-crawler/crawler/scheduler"
+	"go-crawler/crawler/zhenai/parser"
 )
 
 func main() {
@@ -18,13 +18,13 @@ func main() {
 		WorkerCount: 100,
 	}
 
-	//e.Run(engine.Request{
-	//	Url:        "http://www.zhenai.com/zhenghun",
-	//	ParserFunc: parser.ParseCityList,
-	//})
-
 	e.Run(engine.Request{
-		Url:        "http://www.zhenai.com/zhenghun/shanghai",
-		ParserFunc: parser.ParseCity,
+		Url:        "http://www.zhenai.com/zhenghun",
+		ParserFunc: parser.ParseCityList,
 	})
+
+	//e.Run(engine.Request{
+	//	Url:        "http://www.zhenai.com/zhenghun/shanghai",
+	//	ParserFunc: parser.ParseCity,
+	//})
 }
