@@ -19,7 +19,7 @@ func ParseCity(contents []byte) types.ParseResult {
 	// 将解析出来的 Url 列表都存储为一个ParserResult
 	result := types.ParseResult{}
 	for _, m := range matches {
-		result.Items = append(result.Items, "User " + string(m[2]))
+		//result.Items = append(result.Items, "User " + string(m[2]))
 		result.Requests = append(result.Requests,
 			types.Request{
 				Url: string(m[1]),

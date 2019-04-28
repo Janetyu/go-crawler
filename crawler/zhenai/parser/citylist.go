@@ -16,7 +16,7 @@ func ParseCityList(contents []byte) types.ParseResult {
 	//limit := 10
 	for _, m := range matches {
 		// m[0] 匹配的字符串本身
-		result.Items = append(result.Items, "City " + string(m[2]))
+		//result.Items = append(result.Items, "City " + string(m[2]))
 		result.Requests = append(result.Requests,
 			types.Request{
 				Url: string(m[1]),

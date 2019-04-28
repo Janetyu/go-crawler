@@ -21,6 +21,7 @@ var rateLimiter = time.Tick(10 * time.Millisecond)
 func Fetch(url string) ([]byte, error) {
 	<- rateLimiter
 	var utf8Reader *transform.Reader
+	// 对用户页面的爬取做特殊处理
 	if strings.Contains(url,"http://album.zhenai.com/u/") {
 		client := &http.Client{}
 

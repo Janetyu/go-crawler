@@ -4,6 +4,8 @@ import (
 	"go-crawler/crawler/types"
 )
 
+
+// Request队列和Worker队列
 type QueuedScheduler struct {
 	requestChan chan types.Request
 	workerChan chan chan types.Request // 每一个 worker 对外接口的是 chan Request，每一个 worker 都是 chan

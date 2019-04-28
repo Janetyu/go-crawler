@@ -38,6 +38,9 @@ func (e *ConcurrentEngine)Run(seeds ...types.Request) {
 		}
 
 		for _, request := range result.Requests {
+			if isDuplicate(request.Url) {
+				continue
+			}
 			e.Scheduler.Submit(request)
 		}
 	}

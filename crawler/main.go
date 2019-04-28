@@ -4,6 +4,7 @@ import (
 	"go-crawler/crawler/engine"
 	"go-crawler/crawler/scheduler"
 	"go-crawler/crawler/zhenai/parser"
+	"go-crawler/crawler/types"
 )
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 		WorkerCount: 100,
 	}
 
-	e.Run(engine.Request{
+	e.Run(types.Request{
 		Url:        "http://www.zhenai.com/zhenghun",
 		ParserFunc: parser.ParseCityList,
 	})
