@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcc4ea29-abad-458b-b8bc-aed86ee7a04e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/crawler/persist/itemsaver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/concurrent.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/persist/itemsaver.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/persist/itemsaver.go" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
     <session id="-144129277">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="35" />
+          <entry key="project.closed" value="36" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -57,7 +57,7 @@
           <entry key="project.open.time.15" value="8" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="5" />
-          <entry key="project.open.time.18" value="4" />
+          <entry key="project.open.time.18" value="5" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="3" />
@@ -65,13 +65,13 @@
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="go" value="87" />
+          <entry key="go" value="92" />
           <entry key="html" value="1" />
           <entry key="s" value="1" />
         </counts>
@@ -79,7 +79,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Git file" value="3" />
-          <entry key="Go" value="87" />
+          <entry key="Go" value="92" />
           <entry key="HTML" value="1" />
           <entry key="x86 Plan9 Assembly" value="1" />
         </counts>
@@ -87,13 +87,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="go" value="7978" />
+          <entry key="go" value="8672" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="3" />
-          <entry key="Go" value="7978" />
+          <entry key="Go" value="8672" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
@@ -114,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="380">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -126,8 +126,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/persist/itemsaver.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="513">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crawler/persist/itemsaver_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gopkg.in/olivere/elastic.v5/get.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="249" column="4" selection-start-line="249" selection-start-column="4" selection-end-line="249" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -178,8 +196,9 @@
         <option value="$PROJECT_DIR$/crawler/zhenai/parser/city.go" />
         <option value="$PROJECT_DIR$/crawler/zhenai/parser/citylist.go" />
         <option value="$PROJECT_DIR$/crawler/main.go" />
-        <option value="$PROJECT_DIR$/crawler/persist/itemsaver.go" />
         <option value="$PROJECT_DIR$/crawler/engine/concurrent.go" />
+        <option value="$PROJECT_DIR$/crawler/persist/itemsaver.go" />
+        <option value="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" />
       </list>
     </option>
   </component>
@@ -200,7 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,10 +237,37 @@
               <item name="crawler" type="462c0819:PsiDirectoryNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="go-crawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="persist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-crawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="zhenai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-crawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="zhenai" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-crawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="zhenai" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,6 +284,80 @@
       <recent name="D:\MyProject\GoProject\src\go-crawler\crawler\zhenai" />
     </key>
   </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:9200" />
+          <option name="urlPath" value="dating_profile/zhenai/_search" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="content-type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:9200" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="content-type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:9200" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -251,7 +370,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Test.TestSave in go-crawler/crawler/persist">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="go-crawler" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -296,18 +415,6 @@
       <pattern value="^TestConcurrentEngine_simpleScheduler$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestParseCity in go-crawler/crawler/zhenai/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-crawler" />
-      <working_directory value="$PROJECT_DIR$/crawler/zhenai/parser" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="go-crawler/crawler/zhenai/parser" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestParseCity$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-crawler" />
       <working_directory value="$PROJECT_DIR$/crawler/zhenai/parser" />
@@ -318,6 +425,18 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestParseProfile$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSave in go-crawler/crawler/persist" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-crawler" />
+      <working_directory value="$PROJECT_DIR$/crawler/persist" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go-crawler/crawler/persist" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSave$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -333,51 +452,51 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestParseCity in go-crawler/crawler/zhenai/parser" />
       <item itemvalue="Go Test.TestParseProfile in go-crawler/crawler/zhenai/parser" />
       <item itemvalue="Go Test.TestConcurrentEngine_simpleScheduler in go-crawler/crawler/engine" />
       <item itemvalue="Go Test.TestConcurrentEngine_queuedScheduler in go-crawler/crawler/engine" />
+      <item itemvalue="Go Test.TestSave in go-crawler/crawler/persist" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestSave in go-crawler/crawler/persist" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestConcurrentEngine_queuedScheduler in go-crawler/crawler/engine" />
         <item itemvalue="Go Test.TestConcurrentEngine_simpleScheduler in go-crawler/crawler/engine" />
         <item itemvalue="Go Test.TestParseProfile in go-crawler/crawler/zhenai/parser" />
-        <item itemvalue="Go Test.TestParseCity in go-crawler/crawler/zhenai/parser" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 03m 15s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 03m 27s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 11m 12s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 11m 58s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 12m 42s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 26m 51s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 27m 18s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 28m 38s.xml">
-      <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestParseProfile_in_go-crawler_crawler_zhenai_parser - 2019.01.29 at 16h 29m 48s.xml">
       <configuration name="TestParseProfile in go-crawler/crawler/zhenai/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="TestConcurrentEngine_simpleScheduler_in_go-crawler_crawler_engine - 2019.04.27 at 22h 22m 16s.xml">
       <configuration name="TestConcurrentEngine_simpleScheduler in go-crawler/crawler/engine" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 09m 41s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 10m 19s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 18m 53s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 21m 42s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 22m 12s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.06 at 22h 22m 43s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.07 at 01h 41m 53s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSave_in_go-crawler_crawler_persist - 2019.05.07 at 01h 43m 11s.xml">
+      <configuration name="TestSave in go-crawler/crawler/persist" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -391,14 +510,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36453578" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3713851" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="REST Client" visible="true" weight="0.56020945" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49923897" weight="0.41710296" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49923897" visible="true" weight="0.41710296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.46600333" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,6 +526,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.37976784" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32809773" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50076103" side_tool="true" weight="0.37645108" />
+      <window_info anchor="bottom" id="REST Client" order="11" weight="0.56020945" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -573,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/zhenai/parser/profile_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/douban-movie/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -588,13 +701,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/runtest.go" />
-    <entry file="file://$PROJECT_DIR$/crawler/zhenai/model/profile.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -679,6 +785,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../gopkg.in/olivere/elastic.v5/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/zhenai/model/profile.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/zhenai/parser/profile_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="27" selection-start-line="27" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/engine/concurrent.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -686,17 +813,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/persist/itemsaver.go">
+    <entry file="file://$PROJECT_DIR$/crawler/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="380">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/main.go">
+    <entry file="file://$PROJECT_DIR$/crawler/persist/itemsaver.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="513">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gopkg.in/olivere/elastic.v5/get.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="249" column="4" selection-start-line="249" selection-start-column="4" selection-end-line="249" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/persist/itemsaver_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>
