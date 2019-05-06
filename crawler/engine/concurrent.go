@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"log"
 	"go-crawler/crawler/scheduler"
 	"go-crawler/crawler/types"
 )
@@ -9,6 +8,7 @@ import (
 type ConcurrentEngine struct {
 	Scheduler scheduler.Scheduler
 	WorkerCount int
+	ItemChan chan interface{}
 }
 
 func (e *ConcurrentEngine)Run(seeds ...types.Request) {
@@ -28,13 +28,12 @@ func (e *ConcurrentEngine)Run(seeds ...types.Request) {
 		e.Scheduler.Submit(r)
 	}
 
-	itemCount := 0
 	for {
 		// 这里是 engine 消费 worker
+		// engine 将 item 传给 itemSaver 来处理
 		result := <- out
 		for _, item := range result.Items {
-			log.Printf("Got item #%d: %v", itemCount, item)
-			itemCount++
+			go func(){ e.ItemChan <- item }()
 		}
 
 		for _, request := range result.Requests {

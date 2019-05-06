@@ -5,6 +5,7 @@ import (
 	"go-crawler/crawler/scheduler"
 	"go-crawler/crawler/zhenai/parser"
 	"go-crawler/crawler/types"
+	"go-crawler/crawler/persist"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 		//Scheduler: &scheduler.SimpleScheduler{},
 		Scheduler: &scheduler.QueuedScheduler{},
 		WorkerCount: 100,
+		ItemChan: persist.ItemSaver(),
 	}
 
 	e.Run(types.Request{
