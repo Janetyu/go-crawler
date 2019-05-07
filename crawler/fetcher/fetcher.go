@@ -16,11 +16,15 @@ import (
 )
 
 // 用于限制爬取速度, 相当于 1 秒处理 100 个 request
-var rateLimiter = time.Tick(10 * time.Millisecond)
+var rateLimiter = time.Tick(100 * time.Millisecond)
 
 func Fetch(url string) ([]byte, error) {
 	<- rateLimiter
+	var err error
+	var resp *http.Response
 	var utf8Reader *transform.Reader
+	var bodyReader *bufio.Reader
+	var e encoding.Encoding
 	// 对用户页面的爬取做特殊处理
 	if strings.Contains(url,"http://album.zhenai.com/u/") {
 		client := &http.Client{}
@@ -43,45 +47,42 @@ func Fetch(url string) ([]byte, error) {
 		}
 
 		// 处理返回结果
-		resp,_ := client.Do(reqest)
-		defer resp.Body.Close()
+		resp, err = client.Do(reqest)
+		if err != nil {
+			log.Printf("http request error: %v", err)
+			return nil, err
+		}
 
 		if resp.StatusCode != http.StatusOK {
 			return nil,
 				fmt.Errorf("Wrong status code: %d ", resp.StatusCode)
 		}
 
-		// 转换获取页面的数据编码
-		bodyReader := bufio.NewReader(resp.Body)
-		e := determineEncoding(bodyReader)
-		// utf8Reader := transform.NewReader(resp.Body,
-		// simplifiedchinese.GBK.NewDecoder())
-
-		utf8Reader = transform.NewReader(bodyReader,
-			e.NewDecoder())
 
 	} else {
-		resp, err := http.Get(url)
+		resp, err = http.Get(url)
 		if err != nil {
 			return nil, err
 		}
-		defer resp.Body.Close()
+
 
 		if resp.StatusCode != http.StatusOK {
 			return nil,
 				fmt.Errorf("Wrong status code: %d ", resp.StatusCode)
 		}
-
-		// 转换获取页面的数据编码
-		bodyReader := bufio.NewReader(resp.Body)
-		e := determineEncoding(bodyReader)
-		// utf8Reader := transform.NewReader(resp.Body,
-		// simplifiedchinese.GBK.NewDecoder())
-
-		utf8Reader = transform.NewReader(bodyReader,
-			e.NewDecoder())
-
 	}
+
+	defer resp.Body.Close()
+
+	// 转换获取页面的数据编码
+	bodyReader = bufio.NewReader(resp.Body)
+	e = determineEncoding(bodyReader)
+	// utf8Reader := transform.NewReader(resp.Body,
+	// simplifiedchinese.GBK.NewDecoder())
+
+	utf8Reader = transform.NewReader(bodyReader,
+		e.NewDecoder())
+
 	return ioutil.ReadAll(utf8Reader)
 }
 

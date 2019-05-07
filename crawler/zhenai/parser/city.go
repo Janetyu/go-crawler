@@ -20,10 +20,13 @@ func ParseCity(contents []byte) types.ParseResult {
 	result := types.ParseResult{}
 	for _, m := range matches {
 		//result.Items = append(result.Items, "User " + string(m[2]))
+		url := string(m[1])
 		result.Requests = append(result.Requests,
 			types.Request{
-				Url: string(m[1]),
-				ParserFunc: ParseProfile,
+				Url: url,
+				ParserFunc: func(c []byte) types.ParseResult {
+					return ParseProfile(c, url)
+				},
 			})
 	}
 
