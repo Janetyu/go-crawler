@@ -10,6 +10,15 @@ import (
 )
 
 func TestSave(t *testing.T) {
+	// must start up elastic search
+	// here using docker go client.
+	client, err := elastic.NewClient(
+		elastic.SetSniff(false))
+
+	if err != nil {
+		panic(err)
+	}
+
 	excepted := types.Item{
 		Url: "http://album.zhenai.com/u/1106374945",
 		Type: "zhenai",
@@ -25,17 +34,9 @@ func TestSave(t *testing.T) {
 		},
 	}
 
+	const index = "dating_test"
 	// save expected item
-	err := save(excepted)
-
-	if err != nil {
-		panic(err)
-	}
-
-	// must start up elastic search
-	// here using docker go client.
-	client, err := elastic.NewClient(
-		elastic.SetSniff(false))
+	err = save(client, index, excepted)
 
 	if err != nil {
 		panic(err)
@@ -43,7 +44,7 @@ func TestSave(t *testing.T) {
 
 	// fetch saved item
 	resp, err := client.Get().
-		Index("dating_profile").
+		Index(index).
 		Type(excepted.Type).
 		Id(excepted.Id).
 		Do(context.Background())

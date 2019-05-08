@@ -3,7 +3,6 @@ package engine
 import (
 	"log"
 	"time"
-	"go-crawler/crawler/fetcher"
 	"go-crawler/crawler/types"
 )
 
@@ -34,15 +33,4 @@ func (e SimpleEngine)Run(seeds ...types.Request) {
 
 		time.Sleep(3 * time.Second)
 	}
-}
-
-func worker(r types.Request) (types.ParseResult, error) {
-	//log.Printf("Fetching %s", r.Url)
-	body, err := fetcher.Fetch(r.Url)
-	if err != nil {
-		log.Printf("Fetcher: error fetching url %s: %v", r.Url, err)
-		return types.ParseResult{}, err
-	}
-
-	return r.ParserFunc(body), nil
 }

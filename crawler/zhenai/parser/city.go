@@ -12,7 +12,7 @@ var (
 			`href="(http://www.zhenai.com/zhenghun/[^"]+)"`)
 )
 
-func ParseCity(contents []byte) types.ParseResult {
+func ParseCity(contents []byte, _ string) types.ParseResult {
 	//re := regexp.MustCompile(cityRe)
 	matches := profileRe.FindAllSubmatch(contents, -1)
 
@@ -24,9 +24,7 @@ func ParseCity(contents []byte) types.ParseResult {
 		result.Requests = append(result.Requests,
 			types.Request{
 				Url: url,
-				ParserFunc: func(c []byte) types.ParseResult {
-					return ParseProfile(c, url)
-				},
+				ParserFunc: ProfileParser(),
 			})
 	}
 
@@ -40,4 +38,10 @@ func ParseCity(contents []byte) types.ParseResult {
 	}
 
 	return result
+}
+
+func ProfileParser() types.ParserFunc {
+	return func(c []byte, url string) types.ParseResult {
+		return ParseProfile(c, url)
+	}
 }

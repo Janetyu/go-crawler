@@ -8,7 +8,7 @@ import (
 type ConcurrentEngine struct {
 	Scheduler scheduler.Scheduler
 	WorkerCount int
-	ItemChan chan interface{}
+	ItemChan chan types.Item
 }
 
 func (e *ConcurrentEngine)Run(seeds ...types.Request) {
