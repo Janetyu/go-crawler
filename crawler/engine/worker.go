@@ -13,7 +13,6 @@ func worker(r types.Request) (types.ParseResult, error) {
 		log.Printf("Fetcher: error fetching url %s: %v", r.Url, err)
 		return types.ParseResult{}, err
 	}
-
 	return r.ParserFunc(body, r.Url), nil
 }
 

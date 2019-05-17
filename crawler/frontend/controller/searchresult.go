@@ -57,7 +57,7 @@ func (h SearchResultHandler) getSearchResult(q string, from int) (model.SearchRe
 	var result model.SearchResult
 	result.Query = q
 	resp, err := h.client.
-		Search("dating_profile").
+		Search("knowledge_base").
 		//对q 进行正则替换，只在给elasticSearch时rewrite
 		Query(elastic.NewQueryStringQuery(rewriteQueryString(q))).
 		From(from).

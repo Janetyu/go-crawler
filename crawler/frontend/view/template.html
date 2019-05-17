@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>珍爱网-爬虫</title>
+    <title>知识库搜搜</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -19,6 +19,25 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+        .table100-head th {
+            background: #409eef !important;
+        }
+        .search-box button{
+            background: #409eef !important;
+        }
+        .search-box input {
+            border-color: #409eef !important;
+        }
+        .table100-head th:nth-of-type(3){
+            width:350px;
+        }
+        .table100-head td{
+            padding:10px ;
+            font-size:12px;
+            line-height: 20px;
+        }
+    </style>
     <!--===============================================================================================-->
 </head>
 <body>
@@ -44,9 +63,12 @@
                 <table>
                     <thead>
                     <tr class="table100-head">
-                        <th class="column_start">昵称</th>
-                        <th class="column">性别</th>
-                        <th class="column_end">年龄</th>
+                        <th class="column_start">标题</th>
+                        <th class="column">作者</th>
+                        <th class="column">简介</th>
+                        <th class="column">标签</th>
+                        <th class="column">类型</th>
+                        <th class="column_end">日期</th>
                         {{/*<th class="column">身高</th>*/}}
                         {{/*<th class="column">体重</th>*/}}
                         {{/*<th class="column">收入</th>*/}}
@@ -60,11 +82,14 @@
                     </thead>
                     <tbody>
 					{{range .Items}}
-                    <tr>
-                        <td class="column_start"><a href="{{.Url}}" target="_blank">{{.Payload.nickname}}</a></td>
+                    <tr class="table100-head">
+                        <td class="column_start"><a href="{{.Url}}" target="_blank">{{.Payload.Title}}</a></td>
 					{{with .Payload}}
-                        <td class="column">{{.genderString}}</td>
-                        <td class="column_end">{{.age}}</td>
+                        <td class="column">{{.Author}}</td>
+                        <td class="column">{{.Abstract}}</td>
+                        <td class="column">{{.Label}}</td>
+                        <td class="column">{{.Type}}</td>
+                        <td class="column_end">{{.Date}}</td>
                         {{/*<td class="column">{{.Height}}</td>*/}}
                         {{/*<td class="column">{{.Weight}}</td>*/}}
                         {{/*<td class="column">{{.Income}}</td>*/}}
@@ -95,7 +120,7 @@
         </div>
         <footer>
             <hr>
-            <p>Go语言爬虫项目产品展示 @<a href="https://github.com/Albert-W">Albert-W</a></p>
+            <p>基于Elasticsearch的知识库构建 @<a href="https://github.com/Janetyu">JianLinker</a></p>
         </footer>
     </div>
 

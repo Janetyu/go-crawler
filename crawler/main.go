@@ -3,9 +3,18 @@ package main
 import (
 	"go-crawler/crawler/engine"
 	"go-crawler/crawler/scheduler"
-	"go-crawler/crawler/zhenai/parser"
 	"go-crawler/crawler/types"
 	"go-crawler/crawler/persist"
+	"go-crawler/crawler/jb51/parser"
+)
+
+const (
+	ZhenAiWang = "http://www.zhenai.com/zhenghun"
+	JiaoBenZhiJiaGolang = "https://www.jb51.net/list/list_246_1.htm"
+	JiaoBenZhiJiaPython = "https://www.jb51.net/list/list_97_1.htm"
+
+	ZhenDataIndex = "dating_profile"
+	KbsDataIndex = "knowledge_base"
 )
 
 func main() {
@@ -13,7 +22,7 @@ func main() {
 	//	Url:        "http://www.zhenai.com/zhenghun",
 	//	ParserFunc: parser.ParseCityList,
 	//})
-	itemSaver, err := persist.ItemSaver("dating_profile")
+	itemSaver, err := persist.ItemSaver(KbsDataIndex)
 	if err != nil {
 		panic(err)
 	}
@@ -25,9 +34,10 @@ func main() {
 		ItemChan: itemSaver,
 	}
 
+	url := JiaoBenZhiJiaGolang
 	e.Run(types.Request{
-		Url:        "http://www.zhenai.com/zhenghun",
-		ParserFunc: parser.ParseCityList,
+		Url:        url,
+		ParserFunc: parser.ParseActicleList,
 	})
 
 	//e.Run(engine.Request{

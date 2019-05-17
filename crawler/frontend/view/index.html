@@ -1,53 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<title>知识库搜搜</title>
+	<meta  http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
-    <title>珍爱网-爬虫</title>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-
-</head>
+	<style type="text/css">
+	body{
+		background-color: #333;
+		padding: 0px;
+		margin: 0px;
+	}
+	html{
+		padding: 0px;
+		margin: 0px;
+	}
+	.bg-div{
+		background-image: url('images/river.jpg');
+		width: 100vw;
+		height: 100vh;
+		margin: 0 auto;
+		position: relative;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.logo{
+		margin: -4px 15px 0 0;
+		background: url('images/logo.png') no-repeat;
+		background-size:100%;
+		width: 157px;
+		height: 53px;
+		float:left;
+	}
+	.search-input-text{
+		border: 0;
+		height: 25px;line-height: 25px;
+		float:left;
+			width: 350px;
+		outline: none;
+	}
+	.search-input-button{
+		border: 0;
+		background-image: url('images/search-button.png');
+        height: 29px;
+		width: 29px;
+        float:left;
+	}
+	form{ float:left; 
+		background-color: #fff;
+		padding: 5px;
+	}
+	.suggest{
+		width: 388px;
+		background-color: #fff;
+		position: absolute;
+		margin: 0;padding: 0;
+		border: 1px solid #999;
+	}
+	.suggest ul{
+		list-style: none;
+		margin: 0;padding: 0;
+	}
+	.suggest ul li{
+		padding: 3px;
+		font-size: 14px;
+		line-height: 25px;
+		cursor: 
+		pointer;
+	}
+	suggest ul li:hover{
+		text-decoration: underline;
+		background-color: #e5e5e5;
+	}
+	</style>
 <body>
-<div id = "demo">
-    <div align = "middle">
-        <img src="images/zhenai.jpg" width="400px" height="240px">
-        <br>
-        <br>
-        <div class="search-box" align="middle">
-            <!--提交get-->
-            <form method="get" action="search">
-                <!--此处输入搜索语句-->
-
-                <input placeholder="请输入关键词进行检索" type="text" maxlength="100"  name="q">
-                <!--<button type="submit" class="btn btn-info" style="text-align:center;display:inline;height:40px;">搜索</button>-->
-                <button type="submit" class="btn">搜索</button>
-            </form>
-        </div >
-
-        <footer>
-            <hr>
-            <p>Go语言爬虫项目产品展示 @<a href="https://github.com/Albert-W">Albert-W</a></p>
-        </footer>
-
-
-    </div>
-
+<div class="bg-div">
+	<div class="search-box">
+		<div class="logo"></div>	
+	<form method="get" class="search-form" id="search-form" action="search" target="_blank">
+		<input placeholder="请输入关键词进行检索" maxlength="100" type="text" class="search-input-text" name="q" id="search_input" autocomplete="off">
+		<input type="submit" class="search-input-button btn" value="">
+	</form>
+</div>
 </div>
 
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 </body>
 </html>
