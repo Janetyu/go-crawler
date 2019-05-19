@@ -8,17 +8,19 @@ import (
 
 const (
 	golangUrl = "/list/list_246_"
+	pythonUrl = "/list/list_97_"
 )
 
 var (
 	pageCount = 1
 	ActicleRe = regexp.MustCompile(`<a href="(/article/[0-9]+.htm)"[^>]*>[^<]+</a>`)
-	PageRe = regexp.MustCompile(`<a href=/list/list_246_([0-9]+)[^>]+>末页</a>`)
+	PageGolangRe = regexp.MustCompile(`<a href=/list/list_246_([0-9]+)[^>]+>末页</a>`)
+	PagePythonRe = regexp.MustCompile(`<a href=/list/list_97_([0-9]+)[^>]+>末页</a>`)
 	WebUrl = "https://www.jb51.net"
 )
 
 func ParseActicleList(contents []byte, url string) types.ParseResult {
-	subMatches := PageRe.FindSubmatch(contents)
+	subMatches := PagePythonRe.FindSubmatch(contents)
 
 	result := types.ParseResult{}
 
@@ -35,7 +37,7 @@ func ParseActicleList(contents []byte, url string) types.ParseResult {
 	}
 
 	for ;pageCount <= totalPageInt; pageCount++ {
-		url := WebUrl + golangUrl + strconv.Itoa(pageCount) + ".htm"
+		url := WebUrl + pythonUrl + strconv.Itoa(pageCount) + ".htm"
 		result.Requests = append(result.Requests,
 			types.Request{
 				Url: url,

@@ -1,0 +1,343 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/common/content.css">
+  <style>
+    .test {
+      position: relative;
+      height: 20px;
+    }
+
+    .test ul {
+
+      position: absolute;
+      left: 50%;
+      top: -30%;
+      transform: translate(-50%, -50%);
+    }
+
+    h2 {
+      color: #337ab7;
+      font-size: 15px;
+      font-weight: bolder;
+      float: none;
+      text-shadow: 0 1px 0 #fff;
+      position: relative;
+      border-bottom: 1px solid #337ab7;
+      line-height: 40px;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    .label-info {
+      font-size: 14px
+    }
+    .table-head th:nth-of-type(3) {
+      width: 29%;
+    }
+
+    .table-head th:nth-of-type(4) {
+      width: 10%;
+    }
+
+    .data_table td {
+      padding: 10px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>python知识库</h2>
+    <br>
+    <div class="panel panel-primary">
+
+      <div class="panel-body">
+        <table id="table" class="table table-condensed table-bordered table-hover"
+          style="word-break:break-all; word-wrap:break-all;">
+          <caption>
+            <h3><span class="label label-primary glyphicon glyphicon-plus" data-toggle="modal" data-target="#add">
+                添加数据</span>
+                &nbsp;
+              <span class="label label-info Tag">入门</span>
+              <span class="label label-info Tag">strip</span>
+              <span class="label label-info Tag">字典</span>  
+            </h3>
+          </caption>
+          <thead>
+            <tr class="table-head">
+              <th>标题</th>
+              <th>作者</th>
+              <th>简介</th>
+              <th>标签</th>
+              <th>类型</th>
+              <th>日期</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody class="data_table">
+            <!-- <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td><span class="label label-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                  data-target="#edit">修改</span>
+                <span class="label label-primary glyphicon glyphicon-trash deluser">删除</span></td>
+            </tr> -->
+          </tbody>
+        </table>
+
+        <div class="test">
+            <ul class="pagination" id="pagination" style="width: 100%;">
+
+            </ul>
+          <!-- <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- 添加窗口 -->
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title text-center" id="myModalLabel">
+            添加数据
+          </h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-group" action="">
+            <div class="form-group">
+                <label for="">URL</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">专栏</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">ID</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">标题</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">作者</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">简介</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">标签</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">类型</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">日期</label>
+                <input class="form-control" type="text" placeholder="">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">
+            确定
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+          </button>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+  <!--添加窗口-->
+  <!-- 修改窗口 -->
+  <!-- 模态框（Modal） -->
+  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title text-center" id="myModalLabel">
+            修改数据
+          </h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-group" action="">
+              <div class="form-group">
+                  <label for="">URL</label>
+                  <input class="form-control" type="text" placeholder="" value="https://www.jb51.net/article/47990.htm">
+                </div>
+                <div class="form-group">
+                  <label for="">专栏</label>
+                  <input class="form-control" type="text" placeholder="" value="python">
+                </div>
+                <div class="form-group">
+                  <label for="">ID</label>
+                  <input class="form-control" type="text" placeholder="" value="47990">
+                </div>
+                <div class="form-group">
+                  <label for="">标题</label>
+                  <input class="form-control" type="text" placeholder="" value="Python 字典(Dictionary)操作详解">
+                </div>
+                <div class="form-group">
+                  <label for="">作者</label>
+                  <input class="form-control" type="text" placeholder="" value="junjie">
+                </div>
+                <div class="form-group">
+                  <label for="">简介</label>
+                  <input class="form-control" type="text" placeholder="" value="这篇文章主要介绍了Python 字典(Dictionary)的详细操作方法,需要的朋友可以参考下">
+                </div>
+                <div class="form-group">
+                  <label for="">标签</label>
+                  <input class="form-control" type="text" placeholder="" value=" python python字典 python字典操作">
+                </div>
+                <div class="form-group">
+                  <label for="">类型</label>
+                  <input class="form-control" type="text" placeholder="" value="python">
+                </div>
+                <div class="form-group">
+                  <label for="">日期</label>
+                  <input class="form-control" type="text" placeholder="" value="2014年03月11日">
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">
+            确定
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+          </button>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+  <!--修改窗口-->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="static/js/jq-paginator.js"></script>
+<script>
+  var data_tbody = $('.data_table');
+  var tagName = []
+  // var totalPage =0;
+  $.ajax({
+    type: "GET", //提交方式 
+    url: "/admin/data?q=python",//路径 
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    async: false,
+    success: function (result) {//返回数据根据结果进行相应的处理 
+      console.log(result.data.items);
+      var tr_item = result.data.items;
+      // totalPage = (result.data.hits/10);
+      // console.log(parseInt(totalPage))
+      tr_item.forEach(function (item, index) {
+        data_tbody.append('<tr><td>' + item.Payload.Title + '</td><td>' + item.Payload.Author + '</td><td>' + item.Payload.Abstract + '</td><td>' + item.Payload.Label + '</td><td>' + item.Payload.Type + '</td><td>' + item.Payload.Date + '</td><td><span class="label label-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit">修改</span><span class="label label-primary glyphicon glyphicon-trash deluser">删除</span></td></tr>')
+      });
+    }
+  });
+
+  // 分页
+  $('#pagination').jqPaginator({
+    totalPages: 999,
+    visiblePages: 10,
+    currentPage: 1,
+    onPageChange: function (num, type) {
+      var page = (num - 1) * 10;
+      var tagUrl = ''
+      if (tagName.length >= 1) {
+        tagUrl = "/admin/data?q=python" + " Label:(" + tagName.join(' ') + ")" + "&from=" + page;
+      } else {
+        tagUrl = "/admin/data?q=python&from=" + page
+      }
+      $.ajax({
+        type: "GET", //提交方式 
+        url: tagUrl,//路径 
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        success: function (result) {//返回数据根据结果进行相应的处理 
+          data_tbody.children().remove();
+          console.log(result.data.items);
+          var tr_item = result.data.items;
+          tr_item.forEach(function (item, index) {
+            data_tbody.append('<tr><td>' + item.Payload.Title + '</td><td>' + item.Payload.Author + '</td><td>' + item.Payload.Abstract + '</td><td>' + item.Payload.Label + '</td><td>' + item.Payload.Type + '</td><td>' + item.Payload.Date + '</td><td><span class="label label-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit">修改</span><span class="label label-primary glyphicon glyphicon-trash deluser">删除</span></td></tr>')
+          });
+        }
+      });
+    }
+  });
+
+  $(function () {
+    $(".deluser").click(function () {
+
+      if (confirm("确定删除该数据？")) {
+        alert("删除成功");
+        $(this).parent().parent().hide(300);
+      }
+
+    })
+  })
+
+  $('.Tag').on('click', function () {
+    if ($(this).attr("class").indexOf('label-info') > 0) {
+      $(this).removeClass("label-info").addClass(' label-warning')
+      tagName.push($(this).text());
+    } else {
+      tagName.splice(tagName.indexOf($(this).text()), 1)
+      $(this).removeClass("label-warning").addClass(' label-info');
+    }
+    $.ajax({
+      type: "GET", //提交方式 
+      url: "/admin/data?q=python" + " Label:(" + tagName.join(' ') + ")",//路径 
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      async: false,
+      success: function (result) {//返回数据根据结果进行相应的处理 
+        data_tbody.children().remove();
+        console.log(result.data.items);
+        var tr_item = result.data.items;
+        tr_item.forEach(function (item, index) {
+          data_tbody.append('<tr><td>' + item.Payload.Title + '</td><td>' + item.Payload.Author + '</td><td>' + item.Payload.Abstract + '</td><td>' + item.Payload.Label + '</td><td>' + item.Payload.Type + '</td><td>' + item.Payload.Date + '</td><td><span class="label label-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit">修改</span><span class="label label-primary glyphicon glyphicon-trash deluser">删除</span></td></tr>')
+        });
+      }
+    })
+  })
+</script>
+
+</html>

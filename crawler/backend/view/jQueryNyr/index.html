@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>选择日期</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="select.js"></script>
+	<style type="text/css">
+		select{
+			padding: 5px;
+			border-radius: 5px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="date" style="margin-left: 100px;margin-top: 50px;">
+		<select name="year" id="year">
+			<option value="">选择年份</option>
+		</select>
+		<select name="month" id="month">
+			<option value="">选择月份</option>
+		</select>
+		<select id="days" class="day">
+			<option value="">选择日期</option>
+		</select>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#date").selectDate()
+			
+			$("#days").focusout(function(){
+				var year = $("#year option:selected").html()
+				var month = $("#month option:selected").html()
+				var day = $("#days option:selected").html()
+				console.log(year+month+day)
+			})
+			
+		})
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/common/content.css">
+    <style>
+        p img {
+            width: 140px;
+            height: 140px;
+        }
+
+        body {
+            padding-top: 30px;
+        }
+
+        #time {
+            font-size: 30px;
+            font-family: "Microsoft Yaei";
+            color: #00abff;
+        }
+
+        .year-month {
+            padding: 10px;
+            background-color: #008ec4;
+            height: 70px;
+            color: #fff;
+        }
+
+        .year-month p {
+            margin-bottom: 0;
+        }
+
+        p span {
+            font-size: 24px;
+        }
+
+        strong {
+            font-size: 54px;
+            color: #127edbb3;
+        }
+
+        .col-md-6 {
+            float: left;
+            padding-left: 15px;
+            padding-right: 15px;
+            background: #fff;
+            width: 48%;
+            border-left: 1px solid #f0f8ff;
+            border-top: 1px solid #f0f8ff;
+            border-right: 3px solid #cdcdcd;
+            border-bottom: 3px solid #cdcdcd;
+        }
+
+        #weidu {
+            position: relative;
+            left: 12px;
+        }
+
+        .margin-left {
+            margin-left: 430px;
+
+        }
+
+        .table {
+            width: 600px;
+            height: 228px;
+            cursor: pointer;
+        }
+
+        #user {
+
+            background: #fff;
+
+        }
+
+        h5 {
+            color: #666;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px;
+            line-height: 12px;
+            margin: 0;
+        }
+
+        .le {
+
+            background: #008ec4;
+            cursor: pointer;
+            margin-bottom: 2px;
+        }
+
+        .aa {
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+
+            -webkit-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+
+        h5 i {
+            -webkit-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        #box {
+            width: 97%;
+            padding: 0;
+            margin-left: 12px;
+        }
+
+        #box img {
+            width: 100%
+        }
+
+        .wel {
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 10px;
+            color: #337ab7;
+        }
+
+        td {
+            text-align: center;
+            padding: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .im {
+            text-align: left;
+
+        }
+
+        .im p {
+            position: relative;
+            left: 38%;
+        }
+
+        .show {
+            font-size: 14px;
+            font-weight: bold;
+
+        }
+
+        tbody tr td {
+            vertical-align: middle !important;
+        }
+
+        .img {
+            position: relative;
+            left: 90px;
+        }
+
+        #times {
+            position: relative;
+            left: -30px;
+        }
+
+        #first {
+            position: relative;
+            left: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: -10px;
+            background: #008ec4;
+            color: #fff;
+            font-weight: 700;
+            padding: 8px;
+        }
+        .row{
+            height: 93.3vh;
+            padding-top: 30px !important;
+            /* background: url('static/image/firstbg.jpg') no-repeat; */
+            background: url('static/image/firstbg2.jpg') no-repeat;
+            background-size:cover 
+        }
+        .row #first, #hms{
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <div class="row">
+        <div class="pull-left panel-body wel" id="first">
+            <div>Administrator,</div>
+            欢迎登录管理系统！
+        </div>
+
+        <div class="panel-body pull-right" id="times">
+            <div class="year-month pull-left">
+                <p><b id="week"></b></p>
+                <p id="today"></p>
+            </div>
+            <div class="hour-minute pull-right"><strong id="hms"></strong></div>
+            <!-- <div id="time" class="text-center"></div> -->
+        </div>
+    </div>
+<!-- 
+    <div class="row panel-body" id="box">
+
+        <img src="static/image/firstbg.jpg">
+    </div> -->
+
+    <!-- <div class="row panel-body" id="box">
+  <div class="le" data-toggle="collapse"
+  href="#user" id="down"> <h5 style="color:#fff;font-weight:700;"><i id="ico" class="fa fa-chevron-down"></i>&nbsp;个人资料</h5></div>
+  <div class="col-md-6 collapse in" id="user" style="width:100%;">
+   <div class="pull-left img">
+    <p><img src="http://www.jq22.com/demo/jQuery-mydm201701161613/img/noavatar_middle.gif" alt=""></p>
+    <p class="text-center">艾卡西亚</p>
+    <p class="text-center">手机号:15123045228</p>
+    <p id="attend"><input type="button" value="签到" class="btn btn-primary" id="signin"> -->
+    <!-- <input type="button" value="签退" class="btn btn-primary" id="signout"> -->
+    </p>
+    <!-- </div>
+    <div class="pull-left margin-left">
+       <table class="table table-condensed table-bordered table-hover"> 
+
+         <tbody>
+             <tr>
+                <td>员工编号</td>
+                <td class="show">12345678</td>
+            </tr>
+            <tr>
+             <td>注册时间</td>
+             <td class="show">15123045228</td>
+         </tr>
+         <tr>
+             <td>所属部门</td>
+             <td class="show">
+                研发部
+            </td>
+        </tr>
+        <tr>
+         <td>出勤信息</td>
+         <td class="im show">
+            <p>本月出勤次数:31</p>
+            <p>本月迟到次数:1</p>
+            <p>本月早退次数:1</p>
+            <p>本月旷工次数:1</p>
+        </td>
+    </tr>
+</tbody>
+</thead>
+</table>
+
+</div> -->
+
+    <!-- <div class="pull-right"><a href="" data-toggle="modal" data-target="#edit">编辑资料</a>
+</div>
+</div>
+
+
+</div> -->
+
+    <!-- <div class="row panel-body" id="weidu">
+ <div class="col-md-6 panel-body">
+  <h2 class="header"><i class="glyphicon glyphicon-th-list"></i>&nbsp;公告</h2>
+  <div class="listview">
+   <div class="media">
+    <div class="pull-left">
+     <img width="40" src="http://www.jq22.com/demo/jQuery-mydm201701161613/img/noavatar_middle.gif" alt="">
+ </div>
+ <div class="media-body">
+     <small class="text-muted">2小时前 来自 供暖调度班</small><br>
+     <a class="t-overflow" href="">供暖系统故障已排除</a>
+ </div>
+</div>
+
+
+<div class="media">
+    <div class="pull-left">
+     <img width="40" src="http://www.jq22.com/demo/jQuery-mydm201701161613/img/noavatar_middle.gif" alt="">
+ </div>
+ <div class="media-body">
+     <small class="text-muted">2小时前 来自 供暖调度班</small><br>
+     <a class="t-overflow" href="">供暖系统故障已排除</a>
+ </div>
+</div>
+<div class="media text-center"><small><a href="">查看所有</a></small></div>
+</div>
+</div>
+
+
+
+<div class="col-md-6 panel-body" id="weidu">
+  <h2 class="sub-header"><i class="glyphicon glyphicon-bell"></i>&nbsp;未读消息</h2>
+  <div class="listview">
+   <div class="media">
+    <div class="pull-left">
+     <img width="40" src="http://www.jq22.com/demo/jQuery-mydm201701161613/img/noavatar_middle.gif" alt="">
+ </div>
+ <div class="media-body">
+     <small class="text-muted">2小时前 来自 供暖调度班</small><br>
+     <a class="t-overflow" href="">供暖系统故障已排除</a>
+ </div>
+</div>
+
+
+<div class="media">
+    <div class="pull-left">
+     <img width="40" src="http://www.jq22.com/demo/jQuery-mydm201701161613/img/noavatar_middle.gif" alt="">
+ </div>
+ <div class="media-body">
+     <small class="text-muted">2小时前 来自 供暖调度班</small><br>
+     <a class="t-overflow" href="">供暖系统故障已排除</a>
+ </div>
+</div>
+<div class="media text-center"><small><a href="">查看所有</a></small></div>
+</div>
+</div>
+</div> -->
+
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title text-center" id="myModalLabel">
+                        编辑资料
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group" action="">
+                        <div class="form-group">
+                            <label for="">用户名</label>
+                            <input class="form-control" type="text" placeholder="6-15位字母或数字">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+
+    $(function () {
+        //时间显示
+        time();
+        signin();
+        signout();
+        function time() {
+            var today = new Date();
+            var month = today.getMonth() + 1;
+            var s = "当前时间:" + today.getFullYear() + "年" + month + "月" + today.getDate() + "日" + "\t星期" + "日一二三四五六".charAt(today.getDay()) + "\t" + today.getHours() + "时" + today.getMinutes() + "分" + today.getSeconds() + "秒";
+            var min = today.getMinutes();
+            if (min >= 0 && min < 10) {
+                min = "0" + min;
+            }
+            var day = month + "月" + today.getDate() + "日";
+            var hms = today.getHours() + ":" + min;
+
+            $("#time").text(s);
+            $("#week").text("星期" + "日一二三四五六".charAt(today.getDay()));
+            $("#today").html("<span><b>" + today.getFullYear() + '年' + "</b></span>" + "<b>" + day + "</b>");
+            $("#hms").html(hms);
+        }
+        setInterval(time, 60000);
+        //个人资料图标动画
+        $("#down").click(function () {
+            console.log()
+            if ($("#ico").attr("class") == "fa fa-chevron-down") {
+                $("#ico").addClass("aa");
+            }
+            else {
+                $(".le,h5,i").removeClass("aa");
+            }
+
+        })
+        // //签到按钮只在周一到周五出现
+        // function signin(){
+        //     var now=new Date();
+        //     var week="星期"+"日一二三四五六".charAt(now.getDay());
+        //     if(week.indexOf("星期六")>-1||week.indexOf("星期日")>-1){
+        //          $("#attend").append("<input type='button' value='签到' class='btn btn-primary' id='signin'>");
+        //         return;
+        //     }else{
+        //         $("#attend").append("<input type='button' value='签到' class='btn btn-primary' id='signin'>");
+        //     }
+        // }
+        //签到
+        //判断今天是否签到
+        function signin() {
+            //ajax请求
+            //判断签到状态
+            //修改签到按钮
+            return;
+        }
+        $("#signin").click(function () {
+            var today = new Date();
+            $("#signin").val("已签到");
+            $("#signin").attr("disabled", true);
+        });
+        //签退按钮下午5点出现
+        function signout() {
+            var now = new Date();
+            var day = parseInt(now.getHours());
+            if (day >= 17 && $(".btn").length == 3) {
+                $("#attend").append("<input type='button' value='签退' class='btn btn-primary' id='signout'>");
+            }
+        }
+        setInterval(signout, 1000);
+        //签退按钮事件
+        $("#signout").click(function () {
+            var today = new Date();
+            $("#signout").val("已签退");
+            $("#signout").attr("disabled", true);
+        });
+
+    })
+</script>
+
+</html>

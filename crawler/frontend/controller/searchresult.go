@@ -3,6 +3,7 @@ package controller
 import (
 	"go-crawler/crawler/frontend/view"
 	"go-crawler/crawler/frontend/model"
+	"go-crawler/crawler/types"
 	"gopkg.in/olivere/elastic.v5"
 	"context"
 	"net/http"
@@ -11,7 +12,6 @@ import (
 	"strings"
 	"fmt"
 	"reflect"
-	"go-crawler/crawler/types"
 )
 
 type SearchResultHandler struct {

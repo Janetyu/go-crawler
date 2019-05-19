@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+function changeTitle() {
+    setTimeout(function(){
+        document.title = '\u200E';
+        changeTitle2();
+    }, 500);
+}
+function changeTitle2() {
+    setTimeout(function(){
+        document.title = "【新消息】";
+        changeTitle();
+    }, 500);
+}
+ 
+changeTitle();
+
+	</script>
+</head>
+<body>
+	<input type="file">
+	<select name="" id="">
+<option value="">123</option>
+<option value="">12341</option>
+	</select>
+</body>
+
+</html>

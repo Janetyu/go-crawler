@@ -1,0 +1,179 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="static/css/common/content.css">
+		 <link href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		.test{
+			position: relative;
+			height: 20px;
+		}
+		.test ul{
+
+			position: absolute;
+			left: 50%;
+			top: -30%;
+			transform:translate(-50%,-50%);
+		}
+		h2{
+			color: #337ab7;
+			font-size: 15px;
+			font-weight: bolder;
+			float: none;
+			text-shadow: 0 1px 0 #fff;
+			position: relative;
+			border-bottom: 1px solid #337ab7;
+			line-height: 40px;
+		}
+		.table{
+			color:#666;
+			font-size:14px;
+		}
+		tr{
+			cursor: pointer;
+		}
+		.gt{
+			color:#a0a0a0;
+		}
+		.checkbox{
+			width:15px;
+			height:15px;
+			cursor:pointer;
+
+		}
+		#all{
+			width:18px;
+			height:18px;
+			cursor:pointer;
+		}
+
+		.btn{
+			width:100px;
+		}
+		h3{
+			cursor:pointer;
+		}
+		.empty{
+			font-size:20px;
+			font-weight:700;
+			color:red;
+
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h2>我的信息</h2>
+		<br>
+		<div class="panel panel-primary">
+
+			<div class="panel-body">
+				<table id="table" class="table table-condensed table-hover" style="word-break:break-all; word-wrap:break-all;">
+					<caption><h3><span class="label label-danger fa fa-trash">删除所有信息</span></h3></caption>
+					<thead>
+						<tr>
+							<th><input type="checkbox" class="checkbox1" id="all">
+							</th>
+							<th style="width:60px">编号</th>
+							<th>发件人</th>
+							<th>主题</th>
+							<th>发送时间</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody id="content">
+						<tr class="email">
+							<td><input type="checkbox" name="us" class="checkbox"></td>
+							<td class="email_2">1</td>
+							<td class="email_2">1</td>
+							<td class="email_2">1</td>
+							<td class="email_2">1</td>
+							<td class="email_2">未读</td>
+							<td class="hidden">1</td>
+						</tr>
+						<tr class="email">
+							<td><input type="checkbox" name="us" class="checkbox"></td>
+							<td class="email_2">1</td>
+							<td class="email_2">1</td>
+							<td class="email_2"><span>qq</span><span class="gt">-laalalalalalal</span></td>
+							<td class="email_2">1</td>
+							<td class="email_2">已读</td>
+							<td class="hidden">33</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="panel-body"><input type="button" value="删除" class="btn btn-primary" id="del"></div>
+				<div class="test">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$("#all").click(function(){
+
+				if(this.checked==true){
+					for(var i=0;i<$(".checkbox").length;i++)
+						$(".checkbox")[i].checked=true;
+				}
+				else{
+					for(var i=0;i<$(".checkbox").length;i++)
+						$(".checkbox")[i].checked=false;
+				}
+
+			});
+			$(".checkbox").click(function(){
+     	var c=$(".checkbox").length;//选中的长度
+     	var a=$(".checkbox:checked").length;//选中的长度
+     	if(c==a){
+     		$("#all").prop("checked",true);
+     	}
+     	else{
+     		$("#all").prop("checked",false);
+     	}
+
+     });
+			$("#del").click(function(){
+				$(".checkbox:checked").parent().parent().hide(300,function(){
+					$(".checkbox:checked").parent().parent().remove();
+					if($(".checkbox").length==0){
+						$("#all").prop("checked",false);
+					$("#content").html("");//先清空，有多次执行！
+					$("#content").append("<tr class='empty'><td></td><td></td><td></td><td>收件箱为空！！！</td></tr>");
+				}
+			});
+			})
+		});
+		$("#table .email .email_2").click(function(){
+			console.log("该行隐藏数："+$(this).children().last().html());
+			window.location.href="showMessage.html";
+		})
+		function add(){
+			var content=$(".email").length;
+			if(content==0){
+				$("#content").append("<tr class='empty'><td></td><td></td><td></td><td>收件箱为空！！！</td></tr>");
+			}
+
+		}
+		add();
+	</script>
+
+</body>
+</html>

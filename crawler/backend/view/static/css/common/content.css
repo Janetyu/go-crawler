@@ -1,0 +1,38 @@
+body {
+	padding-top: 50px;
+	background:#e8e8e8;
+}
+.panel-primary{
+	border:0;
+}
+.modal{
+	position:fixed;
+	top:50px;
+}
+h1{
+      color: #337ab7;
+      font-size: 15px;
+      font-weight: bolder;
+      float: none;
+      text-shadow: 0 1px 0 #fff;
+      position: relative;
+      border-bottom: 1px solid #337ab7;
+      line-height: 40px;
+}
+.test{
+      position: relative;
+      height: 20px;
+}
+.test ul{
+
+      position: absolute;
+      left: 50%;
+      top: -30%;
+      transform:translate(-50%,-50%);
+}
+.test ul li a{
+      border:1px solid #337ab7;
+}
+.test ul li a:hover {
+       border:1px solid #337ab7!important;
+}

@@ -1,0 +1,225 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>考勤信息</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="static/css/common/content.css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    .test{
+      position: relative;
+      height: 20px;
+    }
+    .test ul{
+
+      position: absolute;
+      left: 50%;
+      top: -30%;
+      transform:translate(-50%,-50%);
+    }
+    h2{
+      color: #337ab7;
+      font-size: 15px;
+      font-weight: bolder;
+      float: none;
+      text-shadow: 0 1px 0 #fff;
+      position: relative;
+      border-bottom: 1px solid #337ab7;
+      line-height: 40px;
+    }
+    span{
+      cursor:pointer;
+    }
+    input::-webkit-input-placeholder {
+     /* placeholder颜色  */
+     color: #aab2bd;
+     /* placeholder字体大小  */
+     font-size: 15px;
+     
+     
+   }
+   select{
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+  }
+  #find{
+    height:28px;
+    font-size:17px;
+  }
+  .search{
+    margin-top:2px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+   <h2>工资信息</h2>
+   <br>
+   <div class="panel panel-primary">
+
+     <div class="panel-body">
+       
+       <table id="table" class="table table-condensed table-bordered table-hover" style="word-break:break-all; word-wrap:break-all;">
+         <caption>
+           <h3>
+             <input type="text" class="input-control" id="find" placeholder="员工编号/员工姓名/部门名称"><button class="btn btn-primary search"><i class="fa fa-search fa-white"></i></h3></button>
+             <div id="date">
+              <select name="year" id="year" class="time">
+                <option value="">选择日期</option>
+
+              </select>
+              <select name="month" id="month"  class="time">
+                <option value="">选择月份</option>
+              </select>
+              
+            </div>
+          </caption>
+          
+
+          <thead>
+            <tr>
+             <th>编号</th>
+             <th>员工编号</th>
+             <th>员工姓名</th>
+             <th>部门名称</th>
+             <th>出勤次数</th>
+             <th>基础工资</th>
+             <th>被扣除工资</th>
+             <th>实际工资</th>
+             <th>时间</th>
+             <th>操作</th>
+
+           </tr>
+         </thead>
+         <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td><span class="label label-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit">修改</span></td>
+
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="test">
+       <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- 修改窗口 -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title text-center" id="myModalLabel">
+          修改工资信息
+        </h4>
+      </div>
+      <div class="modal-body">
+       <form class="form-group" action="">
+         <div class="form-group">
+          <label for="">用户名</label>
+          <input class="form-control" type="text" placeholder="6-15位字母或数字">
+        </div>
+        <div class="form-group">
+          <label for="">用户名</label>
+          <input class="form-control" type="text" placeholder="6-15位字母或数字">
+        </div>
+        <div class="form-group">
+          <label for="">用户名</label>
+          <input class="form-control" type="text" placeholder="6-15位字母或数字">
+        </div>
+        <div class="form-group">
+          <label for="">部门</label>
+          <select class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <!-- 修改这栏后台自动记录人员调动。 -->
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">
+        确定
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">取消
+      </button>
+
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div><!--修改窗口-->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="static/js/attend/select.js"></script>
+<script>
+  $(function(){
+    //选择日期事件
+    $("#date").selectDate()
+    
+    $("#days").focusout(function(){
+      var year = $("#year option:selected").html()
+      var month = $("#month option:selected").html()
+      var day = $("#days option:selected").html()
+      
+    })
+    //select改变事件
+    $(".time").change(function () {
+  var year=$(".time")[0].value;
+  var month=$(".time")[1].value;
+ 
+    })
+      //删除信息事件
+      $(".deluser").click(function(){
+
+        if(confirm("确定删除该部门？")){
+          alert("删除成功");
+          $(this).parent().parent().hide(300);
+        }
+        alert("删除失败");
+      })
+    })
+  </script>
+  </html>

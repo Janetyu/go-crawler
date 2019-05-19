@@ -1,0 +1,115 @@
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>用户登录</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/login/login.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+  body{
+			background-image: url("static/image/login/login.jpg");
+			background-size:cover;
+			background-repeat: no-repeat;  
+		}
+		form{
+			height:auto;
+		}
+	</style>
+
+	<script src="static/js/common/code.js"></script>
+
+
+<script>
+	$(function(){
+		$("#open").click(function(){
+			if($("#password").attr("type")=="password"){
+				$("#password").attr("type","text");
+				$("#open").removeClass("glyphicon glyphicon-eye-open");
+				$("#open").addClass("glyphicon glyphicon-eye-close");
+			}
+			else{
+				$("#password").attr("type","password");
+				$("#open").removeClass("glyphicon glyphicon-eye-close");
+				$("#open").addClass("glyphicon glyphicon-eye-open");
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-info">
+			<div class="panel-body">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active">
+						<a href="#home" data-toggle="tab">
+							账号密码登录
+						</a>
+					</li>
+					<!-- <li><a href="#other" data-toggle="tab">手机动态登录</a></li> -->
+
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<br>
+					<!-- 第一块内容 -->
+					<div class="tab-pane fade in active" id="home">
+					<form method="post">
+						<div class="lab"><label for=""><i title="用户名" class="glyphicon glyphicon-user"></i><input type="text" placeholder="用户名" id="username" class="text" name="username"></label></div>
+						
+						<div class="lab"><label for=""><i title="密码" class="glyphicon glyphicon-lock"></i><input id="password" type="password" placeholder="密码" class="text" name="password"><a id="open" class="glyphicon glyphicon-eye-open"></a></label></div>
+						<div id="errorMsg" style="color:red"></div>
+						<!-- <div><input id="cb" type="checkbox">自动登录</div> -->
+						<br>
+						<div><input type="button" id="login" class="btn btn-primary" value="登录"></div>
+						
+						<br>
+					  </form>
+					 <!-- <div id="forgetPass"><a href="reset.html">忘记密码？</a></div> -->
+					</div>
+               <!-- 第二块内容 -->
+					<!-- <div class="tab-pane fade" id="other">
+					<form action="admin.html" method="post">
+						<div class="lab"><label for=""><i title="手机号" class="glyphicon glyphicon-phone"></i><input type="text" placeholder="手机号" class="text"></label></div>
+						<div id="phone"><label for=""><i title="动态码" class="glyphicon glyphicon-check"></i><input type="text" placeholder="动态码" id="send"></label></div><a id="btn"  onclick="sendMessage()">发送验证码</a>
+						<br>
+						<div><input type="submit" id="login" class="btn btn-primary" value="登录"></div>
+					</form>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$('#login').click(function(){
+		var username = $('#username').val()
+		var password = $('#password').val()
+		console.log(username,password);
+		$.ajax({ 
+			type : "POST", //提交方式 
+			url : "/global/adminlogin",//路径 
+			contentType: "application/json; charset=utf-8",
+        	data: JSON.stringify({ 
+			"username" : username,
+			"password" : password
+			}),
+        	dataType: "json",
+			// data : { 
+			// "username" : username,
+			// "password" : password
+			// },//数据，这里使用的是Json格式进行传输 
+			async: false,
+			success : function(result) {//返回数据根据结果进行相应的处理 
+				console.log(result)
+				if (result.data != null) {
+					sessionStorage.setItem('name',result.data.name);
+					window.open('/view/admin.html','_self')
+				}else{
+					$('#errorMsg').text("账号或密码错误")
+				}
+			} 
+		});
+	})
+</script>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>请假审核</title>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/common/content.css">
+  <style>
+
+strong{
+	font-size:17px;}
+  </style>
+
+
+</head>
+<body>
+	<div class="container">
+	<h1 class="head apply">请假审核</h1>
+	<div class="panel">
+
+   <div class="panel-body">
+   <form action="">
+   <div class="form-group"><label for="">请假时间段</label><br><strong>2018/11/22-2019/11/11</strong></div>
+   <div class="form-group"><label for="">说明</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;南海控股秉持“用智慧与心改变世界”，以“尊重人、发展人、成就人”的理念不拘一格延揽八方人才，并把巨大的精力投入到培养未来的商业领袖中。
+无论你来自哪里，无论你是实习生或是毕业生，加入南海控股都会得到系统的培训和个性培养计划以及无微不至的关怀，来发挥最大的潜能。
+在这里工作，不仅充满挑战，同时也会帮你找寻职场的许多乐趣。你将会与一群如你一样充满热情、创意十足、雄心勃勃的人一起工作，在南海这片广阔海洋实现你的职场梦想。</div>
+    <div class="form-group"><input type="button" value="审核通过" class="btn btn-primary">&nbsp;&nbsp;<input type="button" value="驳回" class="btn btn-primary" id="refuse" data-toggle="modal" data-target="#reason"></div>
+    </form>
+    </div>
+	</div>
+	</div>
+	<!-- 添加窗口 -->
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="reason" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title text-center" id="myModalLabel">
+         驳回原因
+        </h4>
+      </div>
+      <div class="modal-body">
+       <form class="form-group" action="">
+         <div class="form-group">
+          <label for="">理由</label>
+          <textarea name="" id="" cols="10" rows="4" class="form-control"></textarea>	
+        </div>
+     </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">
+        确定
+      </button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">取消
+      </button>
+
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div><!--添加窗口-->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</html>

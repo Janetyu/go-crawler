@@ -15,6 +15,7 @@ var (
 	AbstractRe = regexp.MustCompile(`"description": "([^"]+)",`)
 	LabelRe = regexp.MustCompile(`<li class="tag item"><[^>]+>([^<]+)</a></li>`)
 	GolangType = "golang"
+	PythonType = "python"
 )
 
 func ParseActicle(contents []byte, url string) types.ParseResult{
@@ -34,7 +35,7 @@ func ParseActicle(contents []byte, url string) types.ParseResult{
 		Author: utils.ExtractString(contents, AuthorRe),
 		Abstract: utils.ExtractString(contents, AbstractRe),
 		Label: label,
-		Type: GolangType,
+		Type: PythonType,
 		Date: utils.ExtractString(contents, DateRe),
 	}
 
@@ -42,7 +43,7 @@ func ParseActicle(contents []byte, url string) types.ParseResult{
 		Items: []types.Item{
 			{
 				Url: url,
-				Type: GolangType,
+				Type: PythonType,
 				Id: id,
 				Payload: acticle,
 			},
